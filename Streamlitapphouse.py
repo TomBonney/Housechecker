@@ -79,7 +79,7 @@ if st.button("Find Address"):
             selected_address = st.selectbox("Select an Address", addresses)
 
             if selected_address:
-                # Find details of the selected address
+                # When an address is selected, find its corresponding details
                 for address, date, price in addresses_data:
                     if address == selected_address:
                         st.subheader("Address Details")
@@ -92,19 +92,19 @@ if st.button("Find Address"):
                         county = parts[-2].strip()
                         postcode = parts[-1].strip()
 
-                        # Populate fields with address details
-                        st.text_input("House Number", value=house_number)
-                        st.text_input("Address Line 1", value=address_line_1)
-                        st.text_input("Town", value=town)
-                        st.text_input("County", value=county)
-                        st.text_input("Postcode", value=postcode)
-                        st.text_input("Last Sold Date", value=date)
-                        st.text_input("Last Sold Price", value=f"£{price}")
+                        # Display the details in text inputs
+                        st.text_input("House Number", value=house_number, disabled=True)
+                        st.text_input("Address Line 1", value=address_line_1, disabled=True)
+                        st.text_input("Town", value=town, disabled=True)
+                        st.text_input("County", value=county, disabled=True)
+                        st.text_input("Postcode", value=postcode, disabled=True)
+                        st.text_input("Last Sold Date", value=date, disabled=True)
+                        st.text_input("Last Sold Price", value=f"£{price}", disabled=True)
 
                         # Fetch and display energy rating and valid until date
                         energy_rating, valid_until = fetch_energy_rating(postcode, house_number)
-                        st.text_input("Energy Rating", value=energy_rating)
-                        st.text_input("Valid Until Date", value=valid_until)
+                        st.text_input("Energy Rating", value=energy_rating, disabled=True)
+                        st.text_input("Valid Until Date", value=valid_until, disabled=True)
                         break
 
         else:
