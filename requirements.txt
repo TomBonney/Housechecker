@@ -1,0 +1,10 @@
+matplotlib
+streamlit
+pandas
+requests
+Pillow
+matplotlib
+mplsoccer
+beautifulsoup4
+lxml
+openpyxl
